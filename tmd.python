@@ -1,0 +1,36 @@
+import pandas as pd
+
+# Load the CSV files
+employee_df = pd.read_csv('employee.csv')
+deployment_df = pd.read_csv('deployment.csv')
+tmd_df = pd.read_csv('tmd.csv')
+
+# Filter active employees
+active_employees = employee_df[employee_df['status'] == 'active']
+
+# Filter active and production deployments
+active_production_deployments = deployment_df[
+    (deployment_df['status'] == 'active') & (deployment_df['environment'] == 'production')
+]
+
+# Join active employees with active production deployments
+combined_df = pd.merge(
+    active_employees, 
+    active_production_deployments, 
+    left_on='empdeploymentid', 
+    right_on='deployment_id', 
+    how='inner'
+)
+
+# Identify violations: Find rows where 'deployment_id' in combined_df does not exist in tmd_df
+violations = combined_df[~combined_df['deployment_id'].isin(tmd_df['deployment_id'])]
+
+# Extract the required information: username, BU, empid
+violated_employees = violations[['employee_username', 'BU', 'emp_id']]
+
+# Convert the violated employees DataFrame to JSON
+violated_employees_json = violated_employees.to_json(orient='records', indent=4)
+
+# Print the JSON output
+print("Violated Employee Details in JSON Format:")
+print(violated_employees_json)
