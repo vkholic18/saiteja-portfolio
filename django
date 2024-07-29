@@ -1,0 +1,47 @@
+[2:19 PM] R R, Raghunaath
+class VendorEngagements(models.Model):
+    vendor                         = models.ForeignKey(ClientMaster, on_delete = models.SET_NULL, null = True, default = None)
+    engagement_name                = models.CharField(max_length = 255)
+    engagement_desc                = models.CharField(max_length = 255)
+    status                         = models.IntegerField(choices = StatusChoices.choices, default = StatusChoices.STATUS_ACTIVE)
+    contract_value                 = models.CharField(max_length = 50, null = True, default = None)
+    start_date                     = models.DateField()
+    end_date                       = models.DateField()
+    business_requestor             = models.CharField(max_length = 50, null = True, default = None)
+    vendor_spoc                    = models.CharField(max_length = 50, null = True, default = None)
+    created_on                     = models.DateTimeField(auto_now_add = True)
+    updated_on                     = models.DateTimeField(null = True, default = None)
+    service_description            = models.CharField(max_length = 500, null = True, default = None)
+    client_accessinformation       = models.CharField(max_length = 500, null = True, default = None)
+    client_accessinformationothers = models.CharField(max_length = 500, null = True, default = None)
+    entities_information           = models.CharField(max_length = 500, null = True, default = None)
+    domain_name                    = models.CharField(max_length = 500, null = True, default = None)
+    vendor_using_status            = models.IntegerField(null = True, default = None)
+    geo_location                   = models.CharField(max_length = 500, null = True, default = None)
+    services                       = models.ManyToManyField(ServiceMaster, related_name = 'engagements', db_table = 'engagement_services')
+ 
+    class Meta:
+        db_table = 'vendor_engagements'
+ 
+[2:19 PM] R R, Raghunaath
+class EngagementAddSerializer(serializers.ModelSerializer):
+ 
+    class Meta:
+        model  = VendorEngagements
+        fields = '__all__'
+ 
+    def create(self, validated_data):
+        # Create the VendorEngagements instance
+        vendor_engagement_instance = VendorEngagements.objects.create(**validated_data)
+ 
+        # Generate a unique contract value based on engagement ID
+        unique_id                                 = f"{vendor_engagement_instance.id:06d}"
+        vendor_engagement_instance.contract_value = unique_id
+ 
+        # Save the changes
+        vendor_engagement_instance.save()
+ 
+        return vendor_engagement_instance
+ 
+ 
+ 
