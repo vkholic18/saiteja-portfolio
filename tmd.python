@@ -34,3 +34,6 @@ violated_employees_json = violated_employees.to_json(orient='records', indent=4)
 # Print the JSON output
 print("Violated Employee Details in JSON Format:")
 print(violated_employees_json)
+
+
+https://medium.com/django-unleashed/securing-django-rest-apis-with-jwt-authentication-using-simple-jwt-a-step-by-step-guide-28efa84666fe
