@@ -1,0 +1,51 @@
+Completed training in Python, Django, and MySQL after joining in October 2021.
+Acquired skills in REST APIs and Object-Relational Mapping (ORM).
+Gained experience with version control systems like Git and GitHub, and developed personal projects including a to-do list app, an e-commerce site, and a job application portal.
+Contributed to the Alphametrix project for an American-based company, working on a news article website using Django REST APIs, React, PostgreSQL, Docker, and GitHub.
+Implemented user registration with OTP and password reset functionalities.
+Developed welcome and forgot password emails with OTP authentication.
+Created a comprehensive user module.
+Designed a search pipeline to fetch articles based on various criteria and developed a function to retrieve articles from online sources using the Requests module.
+Deployed the website on AWS and utilized S3 for object storage.
+Worked on Kaggle’s Richers model prediction problem, created six models, and achieved an accuracy of 85%.
+Developed an automation script using Pandas to fetch employee details from Excel sheets and send congratulatory emails for completed certifications using the SMTP library.
+Transitioned to KPMG to explore new projects and opportunities.
+Learned PySpark and Spark Big Data concepts, and revised SQL extensively.
+Worked on the CCM (Continuous Control Monitoring) tool, a web application built with Django and React, using MySQL as the database.
+Handled backend tasks including user registration, login, backend logic, and API development.
+Successfully cleared the client interview for a Data Engineer role at Goldman Sachs.
+Integrated the Razorpay payment gateway into the Django backend.
+Utilized MinIO object storage for managing files, documents, and images.
+Attended Data Engineering training and created pipelines to transfer data from on-premise to Azure Data Lake Gen 2 storage using Azure Data Factory.
+Currently working on a data engineering project, writing SQL logic to determine compliance and non-compliance based on business requirements.
+Certifications:
+
+AZ-900: Microsoft Azure Fundamentals
+AZ-204: Developing Solutions for Microsoft Azure
+CLF-C01: AWS Certified Cloud Practitioner
+Skills:
+
+Python
+Django
+Django REST Framework
+REST APIs
+ORM
+Data Structures and Algorithms
+Flask (Beginner)
+React (Beginner)
+HTML
+CSS
+JavaScript
+MySQL
+PostgreSQL
+Spark
+PySpark
+Azure
+AWS
+Pandas
+NumPy
+
+
+
+
+
