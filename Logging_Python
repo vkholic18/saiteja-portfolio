@@ -11,6 +11,8 @@ def get_logger():
     logging.basicConfig(filename=os.path.join(log_dir, PATH_FILE_NAME),level=logging.DEBUG)
     return logging
 
+PATH_FILE_NAME = f"api_requests_{datetime.datetime.now().date()}.log"
+
 
 
 
