@@ -1,1 +1,58 @@
-Logging Configuration
+      Logging Configuration
+================================
+
+
+  settings.py
+================
+def get_logger():
+    log_dir = 'logs'
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    logging.basicConfig(filename=os.path.join(log_dir, PATH_FILE_NAME),level=logging.DEBUG)
+    return logging
+
+
+
+
+api_loggger.py
+===============
+from config.settings import get_logger
+
+def api_logging(log_data):
+    logger = get_logger()
+    """
+    Function used to log all the API requests and responses along with error if any.
+    Creates log files on daily basis.
+    Params:
+    1. log_data: list of individual logs having log type and message.
+    """
+    try:
+        for log in log_data:
+            message = log.split("|| ")
+            if message[0] == 'info':
+                logger.info(message[1])
+            else:
+                logger.error(message[1])
+    except Exception as e:
+        logger.error(f"Log function error: {str(e)}")
+    logger.info("=" * 150)
+    return True
+
+
+
+
+Use Case
+========
+
+log_data = [
+            f"info|| {datetime.datetime.now()}: Delete Announcements API"]
+
+log_data.append(f"info || Delete Announcements API :{context}")
+            log_data.append(LINE_BREAK)
+
+
+
+
+
+
+
