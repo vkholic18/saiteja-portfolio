@@ -1,7 +1,14 @@
-As a data engineer at [Company Name], I played a pivotal role in designing and implementing robust data pipelines using Python and PySpark. My primary focus was on developing scalable ETL processes to extract, transform, and load data from various sources into centralized data warehouses. Leveraging PySpark's distributed computing capabilities, I optimized data processing to handle large volumes of data efficiently. This involved crafting complex transformations to clean and prepare data for analysis, ensuring that our data warehouse was populated with high-quality, reliable data. Additionally, I used my SQL expertise to manage and query data, implementing advanced techniques to enhance data retrieval speed and performance, ultimately providing faster and more accurate insights for the business.
+def get_student(request):
+    department = request.query_params.get('department')
+    students=Student.objects.all(department=department)
+    serializer=StudentSerilalizer(students,many=True)
+    return Response(serializer.data)
 
-I was responsible for the automation and monitoring of data workflows using Apache Airflow. By orchestrating tasks and managing dependencies within Airflow, I streamlined our data operations, ensuring that data was processed and delivered in a timely and reliable manner. This automation significantly reduced manual interventions, decreasing the risk of human error and improving overall process efficiency. I meticulously configured Airflow to handle complex scheduling requirements and monitored the workflows to promptly address any issues, maintaining the smooth and uninterrupted flow of data. This role also involved continuous performance tuning and optimization to adapt to the evolving needs of the business and the growing data volume.
 
-Collaboration and knowledge sharing were integral aspects of my role. I worked closely with cross-functional teams, including data scientists, analysts, and business stakeholders, to understand their data requirements and deliver tailored solutions that supported their objectives. This included participating in meetings to align on project goals, providing technical insights, and translating business needs into technical specifications. I also developed comprehensive documentation for our data processes and pipeline architecture, ensuring that team members had a clear understanding of our systems and could easily onboard new technologies and processes. Moreover, I conducted training sessions to educate team members on best practices and the effective use of our data tools, fostering a culture of continuous improvement and collaboration within the team.
+import requests
 
-Utilizing Python and PySpark, I developed complex transformation scripts to clean, normalize, and structure data from diverse sources. These transformations were essential for converting messy, inconsistent raw data into a standardized format that could be easily integrated into our data warehouse. By applying various data manipulation techniques, such as filtering, aggregation, and enrichment, I ensured that the transformed data met the high standards required for accurate analysis and reporting.
+response=requests.get("127.0.0.1/api/student?department=cse")
+if response.status_code==200:
+    print(response.text)
+else:
+    print("doesnt exist")
