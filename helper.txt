@@ -12,3 +12,28 @@ if response.status_code==200:
     print(response.text)
 else:
     print("doesnt exist")
+
+JAZZMIN_SETTINGS = {
+    "site_title": "My Admin",
+    "site_header": "My Administration",
+    "welcome_sign": "Welcome to My Admin",
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "order_with_respect_to": ["auth", "books", "users"],
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+    },
+    "show_ui_builder": True,
+    "changeform_format": "single",
+    "related_modal_active": True,
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",  # Themes: cerulean, cosmo, cyborg, darkly, flatly, etc.
+    "navbar": "navbar-dark",
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_flat_style": True,
+}
