@@ -18,6 +18,15 @@ Integrated the Razorpay payment gateway into the Django backend.
 Utilized MinIO object storage for managing files, documents, and images.
 Attended Data Engineering training and created pipelines to transfer data from on-premise to Azure Data Lake Gen 2 storage using Azure Data Factory.
 Currently working on a data engineering project, writing SQL logic to determine compliance and non-compliance based on business requirements.
+Creating SQL Prototype based on the Stakeholder requirement and testing it on the Snowflake.
+After successfully tested it Converting it into Scala code .
+Adding the required data sets and converting them to spark data frames then Running the scala code triggers spark job.
+Checking the logs for errors if any will be resolving.
+
+Using Pylint for checking the Python code is following PEP8 guidelines.
+SonarLint for checking the code optimization and code smells(for scalability).
+Developed a metric trigger when user clicks run it should run the corresponding metric amd generate the findings.
+
 Certifications:
 
 AZ-900: Microsoft Azure Fundamentals
