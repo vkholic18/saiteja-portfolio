@@ -27,6 +27,19 @@ Using Pylint for checking the Python code is following PEP8 guidelines.
 SonarLint for checking the code optimization and code smells(for scalability).
 Developed a metric trigger when user clicks run it should run the corresponding metric amd generate the findings.
 
+worked on OS patch metric converted the sql code to Scala.
+Tested the code in snowflake.
+Used filters,joins in scala to get the output.
+Exported the data to Fact and Data points to HDFS.
+Compared the output and sql output.
+Pushed the code in gitlab project and did merge requests from feature->develop->master-> release
+Ran the CI/CD pipeline
+Learnt about the Jira story  points.
+Now working on new metric for MAC patching 
+
+
+
+
 Certifications:
 
 AZ-900: Microsoft Azure Fundamentals
